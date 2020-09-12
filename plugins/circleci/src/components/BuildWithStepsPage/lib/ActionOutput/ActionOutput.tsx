@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React, { useEffect, useState, FC, Suspense } from 'react';
+
 import {
   Accordion,
-  AccordionSummary,
-  Typography,
   AccordionDetails,
+  AccordionSummary,
   LinearProgress,
+  Typography,
 } from '@material-ui/core';
-import moment from 'moment';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { BuildStepAction } from 'circleci-api';
+import moment from 'moment';
+import React, { FC, Suspense, useEffect, useState } from 'react';
 
 const LazyLog = React.lazy(() => import('react-lazylog/build/LazyLog'));
 moment.relativeTimeThreshold('ss', 0);
@@ -66,10 +67,7 @@ export const ActionOutput: FC<{
     )
     .humanize();
   return (
-    <Accordion
-      TransitionProps={{ unmountOnExit: true }}
-      className={className}
-    >
+    <Accordion TransitionProps={{ unmountOnExit: true }} className={className}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls={`panel-${name}-content`}
