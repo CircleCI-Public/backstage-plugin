@@ -14,9 +14,22 @@
  * limitations under the License.
  */
 
-export { CircleCIApi, circleCIApiRef, GitType } from './CircleCIApi';
-export type {
-  BuildWithSteps,
-  BuildStepAction,
-  BuildSummary,
-} from './CircleCIApi';
+import dayjs from 'dayjs';
+import durationPlugin from 'dayjs/plugin/duration';
+import relativeTimePlugin from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(durationPlugin);
+dayjs.extend(relativeTimePlugin);
+
+type DateTimeObject = Date | string | number | undefined;
+
+export function relativeTimeTo(time: DateTimeObject, withoutSuffix = false) {
+  return dayjs().to(dayjs(time), withoutSuffix);
+}
+
+export function durationHumanized(
+  startTime: DateTimeObject,
+  endTime: DateTimeObject,
+) {
+  return dayjs.duration(dayjs(startTime).diff(dayjs(endTime))).humanize();
+}

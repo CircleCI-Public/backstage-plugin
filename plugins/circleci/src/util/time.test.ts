@@ -14,9 +14,18 @@
  * limitations under the License.
  */
 
-export { CircleCIApi, circleCIApiRef, GitType } from './CircleCIApi';
-export type {
-  BuildWithSteps,
-  BuildStepAction,
-  BuildSummary,
-} from './CircleCIApi';
+import { durationHumanized, relativeTimeTo } from './time';
+
+describe('times utils', () => {
+  describe('toRelativeTime', () => {
+    it('should give a relative time of x from today', () => {
+      expect(relativeTimeTo('2020-01-01')).toEqual(expect.any(String));
+    });
+  });
+
+  describe('durationHumanized', () => {
+    it('should give a humanized duration', () => {
+      expect(durationHumanized('2020-11-01', '2020-11-03')).toBe('2 days');
+    });
+  });
+});
