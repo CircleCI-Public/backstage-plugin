@@ -14,7 +14,7 @@ Website: [https://circleci.com/](https://circleci.com/)
 
 ```bash
 # From your Backstage root directory
-yarn add --cwd packages/app @backstage/plugin-circleci
+yarn add --cwd packages/app @circleci/plugin-circleci
 ```
 
 2. Add the `EntityCircleCIContent` extension to the entity page in your app:
@@ -24,7 +24,7 @@ yarn add --cwd packages/app @backstage/plugin-circleci
 import {
   EntityCircleCIContent,
   isCircleCIAvailable,
-} from '@backstage/plugin-circleci';
+} from '@circleci/plugin-circleci';
 
 // For example in the CI/CD section
 const cicdContent = (
