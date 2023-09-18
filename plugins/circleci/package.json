@@ -16,7 +16,7 @@
   "homepage": "https://backstage.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/backstage/backstage",
+    "url": "https://github.com/CircleCI-Public/backstage-plugin",
     "directory": "plugins/circleci"
   },
   "keywords": [
