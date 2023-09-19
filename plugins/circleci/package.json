@@ -1,6 +1,6 @@
 {
   "name": "@circleci/backstage-plugin",
-  "description": "A Backstage plugin that integrates towards Circle CI",
+  "description": "A Backstage plugin that integrates with CircleCI",
   "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -13,7 +13,7 @@
   "backstage": {
     "role": "frontend-plugin"
   },
-  "homepage": "https://backstage.io",
+  "homepage": "https://circleci.com/docs/spotify-backstage/",
   "repository": {
     "type": "git",
     "url": "https://github.com/CircleCI-Public/backstage-plugin",
