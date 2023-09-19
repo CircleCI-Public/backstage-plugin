@@ -1,0 +1,12 @@
+version: '2.1'
+
+orbs:
+  node: circleci/node@5.1
+
+workflows:
+  test-build-and-deploy:
+    jobs:
+      - node/run:
+          pkg-manager: yarn
+          version: "18.17"
+          yarn-run: "test"
