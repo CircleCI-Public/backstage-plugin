@@ -31,7 +31,7 @@ import {
 import {
   EntityCircleCIContent,
   isCircleCIAvailable,
-} from '@circleci/plugin-circleci';
+} from '@circleci/backstage-plugin';
 
 import {
   isGithubActionsAvailable,
