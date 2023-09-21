@@ -4,9 +4,9 @@ Website: [https://circleci.com/](https://circleci.com/)
 
 ## Screenshots
 
-<img src="./src/assets/screenshot-pipeline-list.png" />
-<img src="./src/assets/screenshot-build-details.png" />
-<img src="./src/assets/screenshot-build-failure.png" />
+<img src="https://raw.githubusercontent.com/CircleCI-Public/backstage-plugin/main/plugins/circleci/src/assets/screenshot-pipeline-list.png" />
+<img src="https://raw.githubusercontent.com/CircleCI-Public/backstage-plugin/main/plugins/circleci/src/assets/screenshot-build-details.png" />
+<img src="https://raw.githubusercontent.com/CircleCI-Public/backstage-plugin/main/plugins/circleci/src/assets/screenshot-build-steps.png" />
 
 ## Setup
 
