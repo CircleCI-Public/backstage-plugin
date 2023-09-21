@@ -78,6 +78,10 @@ spec:
 
 ## Release Notes
 
+### v0.1.1
+
+- Update README.md's screenshots and assets path.
+
 ### v0.1.0
 
 - New release under CircleCI
