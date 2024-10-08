@@ -151,22 +151,24 @@ const generatedColumns: TableColumn[] = [
     highlight: true,
     width: '20%',
     render: (row: Partial<CITableBuildInfo>) => {
-      const LinkWrapper = () => {
-        const routeLink = useRouteRef(circleCIBuildRouteRef);
+      return row.buildName ? row.buildName : row?.workflow?.name;
 
-        return (
-          <Link
-            component={RouterLink}
-            to={`${routeLink({
-              buildId: row.id!,
-            })}`}
-          >
-            {row.buildName ? row.buildName : row?.workflow?.name}
-          </Link>
-        );
-      };
+      // const LinkWrapper = () => {
+      //   const routeLink = useRouteRef(circleCIBuildRouteRef);
 
-      return <LinkWrapper />;
+      //   return (
+      //     <Link
+      //       component={RouterLink}
+      //       to={`${routeLink({
+      //         buildId: row.id!,
+      //       })}`}
+      //     >
+      //       {row.buildName ? row.buildName : row?.workflow?.name}
+      //     </Link>
+      //   );
+      // };
+
+      // return <LinkWrapper />;
     },
   },
   {
