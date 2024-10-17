@@ -61,7 +61,7 @@ export const ActionOutput = ({
             actionOutput.map(({ message }: { message: string }) => message),
           );
         }
-      }).catch(err => console.log(err, url));
+      }); // handle error
   }, [url]);
 
   const timeElapsed = durationHumanized(action.start_time, action.end_time);
