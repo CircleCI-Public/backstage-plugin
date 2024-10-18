@@ -26,9 +26,7 @@ import {
 import RetryIcon from '@material-ui/icons/Replay';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
-import { Link as RouterLink } from 'react-router-dom';
 import { durationHumanized, relativeTimeTo } from '../../../../util';
-import { circleCIBuildRouteRef } from '../../../../route-refs';
 import {
   StatusError,
   StatusWarning,
@@ -39,7 +37,6 @@ import {
   TableColumn,
   Link,
 } from '@backstage/core-components';
-import { useRouteRef } from '@backstage/core-plugin-api';
 
 export type CITableBuildInfo = {
   id: string;
@@ -151,22 +148,7 @@ const generatedColumns: TableColumn[] = [
     highlight: true,
     width: '20%',
     render: (row: Partial<CITableBuildInfo>) => {
-      const LinkWrapper = () => {
-        const routeLink = useRouteRef(circleCIBuildRouteRef);
-
-        return (
-          <Link
-            component={RouterLink}
-            to={`${routeLink({
-              buildId: row.id!,
-            })}`}
-          >
-            {row.buildName ? row.buildName : row?.workflow?.name}
-          </Link>
-        );
-      };
-
-      return <LinkWrapper />;
+      return row.buildName ? row.buildName : row?.workflow?.name;
     },
   },
   {
